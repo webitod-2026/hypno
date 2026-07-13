@@ -18,6 +18,132 @@
     });
   }
 
+  /* Pain drum-reel + checklist feedback */
+  const painRoot = document.querySelector("[data-pain-check]");
+  const painSoft = document.querySelector("[data-pain-soft]");
+  const painCta = document.querySelector("[data-pain-cta]");
+  const painReel = document.querySelector("[data-pain-reel]");
+  const painTrack = document.querySelector("[data-pain-track]");
+
+  if (painRoot && painSoft && painCta) {
+    const boxes = painRoot.querySelectorAll('input[type="checkbox"][name="pain"]');
+    const syncPain = () => {
+      const n = [...boxes].filter((b) => b.checked).length;
+      const showCta = n > 2;
+      painSoft.hidden = showCta;
+      painCta.hidden = !showCta;
+    };
+    boxes.forEach((b) => b.addEventListener("change", syncPain));
+    syncPain();
+  }
+
+  if (painReel && painTrack) {
+    const items = [...painTrack.querySelectorAll("[data-pain-item]")];
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let index = 0;
+    let wheelAcc = 0;
+    let touchY = null;
+
+    const itemH = () => {
+      const raw = getComputedStyle(painReel).getPropertyValue("--reel-item").trim();
+      const n = parseFloat(raw);
+      if (raw.endsWith("rem")) return n * 16;
+      return n || 72;
+    };
+
+    const visible = () => {
+      const n = parseFloat(getComputedStyle(painReel).getPropertyValue("--reel-visible"));
+      return n || 5;
+    };
+
+    const render = () => {
+      const h = itemH();
+      const pad = ((visible() - 1) / 2) * h;
+      painTrack.style.paddingTop = `${pad}px`;
+      painTrack.style.paddingBottom = `${pad}px`;
+      painTrack.style.transform = `translate3d(0, ${-index * h}px, 0)`;
+      items.forEach((el, i) => {
+        el.classList.toggle("is-active", i === index);
+        el.classList.toggle("is-near", Math.abs(i - index) === 1);
+      });
+    };
+
+    const go = (next) => {
+      index = Math.max(0, Math.min(items.length - 1, next));
+      render();
+    };
+
+    painReel.addEventListener(
+      "wheel",
+      (e) => {
+        e.preventDefault();
+        wheelAcc += e.deltaY;
+        const step = 36;
+        if (Math.abs(wheelAcc) >= step) {
+          go(index + (wheelAcc > 0 ? 1 : -1));
+          wheelAcc = 0;
+        }
+      },
+      { passive: false }
+    );
+
+    painReel.addEventListener(
+      "touchstart",
+      (e) => {
+        touchY = e.touches[0].clientY;
+        painReel.classList.add("is-dragging");
+      },
+      { passive: true }
+    );
+    painReel.addEventListener(
+      "touchmove",
+      (e) => {
+        if (touchY == null) return;
+        const dy = touchY - e.touches[0].clientY;
+        if (Math.abs(dy) > 28) {
+          go(index + (dy > 0 ? 1 : -1));
+          touchY = e.touches[0].clientY;
+        }
+      },
+      { passive: true }
+    );
+    painReel.addEventListener("touchend", () => {
+      touchY = null;
+      painReel.classList.remove("is-dragging");
+    });
+
+    painReel.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowDown" || e.key === "PageDown") {
+        e.preventDefault();
+        go(index + 1);
+      }
+      if (e.key === "ArrowUp" || e.key === "PageUp") {
+        e.preventDefault();
+        go(index - 1);
+      }
+      if (e.key === " " || e.key === "Enter") {
+        e.preventDefault();
+        const box = items[index]?.querySelector('input[type="checkbox"]');
+        if (box) {
+          box.checked = !box.checked;
+          box.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+      }
+    });
+
+    const prev = painReel.querySelector("[data-pain-prev]");
+    const next = painReel.querySelector("[data-pain-next]");
+    if (prev) prev.addEventListener("click", () => go(index - 1));
+    if (next) next.addEventListener("click", () => go(index + 1));
+
+    if (reduceMotion) {
+      painTrack.style.transition = "none";
+    }
+
+    window.addEventListener("resize", render);
+    render();
+  }
+
   /* Booking form — channel-agnostic stub (wire backend later) */
   const form = document.getElementById("booking-form");
   const status = document.getElementById("booking-status");

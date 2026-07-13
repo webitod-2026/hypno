@@ -87,43 +87,146 @@
         </div>
       </header>
 
-      <!-- PAIN -->
-      <section class="section section--elevated" id="pain" aria-labelledby="pain-title">
-        <div class="wrap">
-          <div class="section-head reveal">
+      <!-- PAIN — drum reel -->
+      <section class="section section--pain" id="pain" aria-labelledby="pain-title">
+        <div class="pain-stage wrap">
+          <div class="section-head pain-stage__head reveal">
             <h2 class="display" id="pain-title">Впізнаєте себе?</h2>
             <p class="lede">Вигорання рідко кричить. Частіше воно шепоче: «ще трохи потерпи».</p>
           </div>
-          <div class="pain-grid">
-            <article class="card glass reveal">
-              <h3>Тіло втомилося раніше за календар</h3>
-              <p>Прокидаєтесь вже виснаженою. Кава, списки й «треба» - а всередині порожньо.</p>
-            </article>
-            <article class="card glass reveal">
-              <h3>Відчуження від близьких</h3>
-              <p>Люди поруч, але ніби крізь скло. Хочеться близькості - і водночас тиші від усіх.</p>
-            </article>
-            <article class="card glass reveal">
-              <h3>Все тримаю на собі</h3>
-              <p>Робота, дім, турбота, новини. Якщо зупинитись - «розсиплеться». Тож не зупиняєтесь.</p>
-            </article>
-            <article class="card glass reveal">
-              <h3>Емоції вибухають або зникають</h3>
-              <p>Дрібниці бісять. Або навпаки - нічого не чіпає. Тільки втома.</p>
-            </article>
-            <article class="card glass reveal">
-              <h3>Вже пробували «просто відпочити»</h3>
-              <p>Відпустка, вихідні, медитації - і знову той самий фон.</p>
-            </article>
-            <article class="card glass reveal">
-              <h3>Сором, що «має бути вдячна»</h3>
-              <p>«Іншим гірше». Тож своїй втомі місця ніби немає.</p>
-            </article>
+
+          <div
+            class="pain-reel glass reveal"
+            data-pain-check
+            data-pain-reel
+            tabindex="0"
+            role="listbox"
+            aria-label="Список станів. Крутіть колесо миші, клік — відмітити."
+          >
+            <div class="pain-reel__fade pain-reel__fade--top" aria-hidden="true"></div>
+            <div class="pain-reel__fade pain-reel__fade--bottom" aria-hidden="true"></div>
+            <div class="pain-reel__window">
+              <div class="pain-reel__focus" aria-hidden="true"></div>
+              <ul class="pain-reel__track" data-pain-track>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="no-joy" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">не відчуваю радості</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="autopilot" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">втомився жити «на автоматі»</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="irritation" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">все дратує</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="no-energy" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">немає енергії</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="relations" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">проблеми у відносинах</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="cant-relax" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">не можу розслабитись</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="no-interest" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">зникло бажання жити цікаво</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="lost-self" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">втратив себе</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="body-tired" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">тіло втомилося раніше за календар</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="alienation" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">відчуження від близьких</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="hold-all" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">все тримаю на собі</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="emotions" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">емоції вибухають або зникають</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="just-rest" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">вже пробували «просто відпочити»</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="guilt" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">сором, що «має бути вдячна»</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div class="pain-reel__controls" aria-hidden="true">
+              <button type="button" class="pain-reel__nav" data-pain-prev>↑</button>
+              <button type="button" class="pain-reel__nav" data-pain-next>↓</button>
+            </div>
+            <p class="pain-reel__hint">Крутіть колесо · клік — відмітити «так, це про мене»</p>
           </div>
-          <p class="bridge reveal">
-            Якщо хоч 2-3 пункти - про вас, ви не «слабкі». Ви - <strong>перевантажені</strong>. І з
-            цим можна м’яко попрацювати.
-          </p>
+
+          <div class="pain-feedback reveal" data-pain-feedback>
+            <p class="bridge pain-feedback__soft" data-pain-soft>
+              Якщо хоч 2-3 пункти - про вас, ви не «слабкі». Ви - <strong>перевантажені</strong>. І з
+              цим можна м’яко та ефективно працювати.
+            </p>
+            <div class="pain-feedback__cta" data-pain-cta hidden>
+              <p class="pain-feedback__msg">
+                Ви відмітили кілька важливих сигналів. Це вже привід не тягнути все сама.
+              </p>
+              <a class="btn btn--primary" href="#zapis">Записатися на Розбір</a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -149,8 +252,9 @@
               вихід
             </h2>
             <p class="lede" style="margin-top: 1rem">
-              Поєднуємо гіпнотичний стан (глибоке, безпечне розслаблення уваги), коучингові питання
-              і роботу з емоціями, тілом та внутрішніми сценаріями.
+              Поєднуємо гіпнотичний стан (глибоке, безпечне розслаблення свідомості з одночасним
+              фокусуванням уваги), коучингові питання і роботу з емоціями, тілом та внутрішніми
+              сценаріями.
             </p>
             <div class="pillars">
               <div class="pillar glass">
