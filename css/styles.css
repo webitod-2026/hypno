@@ -1013,13 +1013,22 @@ h2.display {
 }
 
 .pain-reel__track {
-  list-style: none;
+  list-style: none !important;
   margin: 0;
   padding: 0;
   position: relative;
   z-index: 1;
   will-change: transform;
   transition: transform 0.45s var(--ease);
+}
+
+.pain-reel__track > li {
+  list-style: none !important;
+}
+
+.pain-reel__track > li::marker {
+  content: none;
+  display: none;
 }
 
 .pain-reel.is-dragging .pain-reel__track {
@@ -1060,11 +1069,17 @@ h2.display {
 }
 
 .pain-reel__label input {
-  position: absolute;
-  opacity: 0;
-  width: 1px;
-  height: 1px;
-  pointer-events: none;
+  position: absolute !important;
+  opacity: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+  pointer-events: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
 }
 
 .pain-reel__box {

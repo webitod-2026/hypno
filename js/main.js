@@ -1,4 +1,7 @@
 (() => {
+  document.documentElement.classList.add("js");
+  document.body.classList.add("js-ready");
+
   /* Mobile nav */
   const toggle = document.querySelector(".nav-toggle");
   const drawer = document.querySelector(".nav-drawer");
