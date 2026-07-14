@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Варіант B · Елена Самбур — гіпнокоучинг і терапія емоційного вигорання</title>
+    <meta
+      name="description"
+      content="Гіпнокоучинг для жінок, які втомилися «тримати все». Понад 360 людей з 2021. Запис на «Розбір»."
+    />
+    <meta property="og:title" content="Повернення до себе · гіпнокоучинг Елени Самбур" />
+    <meta
+      property="og:description"
+      content="М’який вихід з емоційного вигорання. Запис на «Розбір»."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/variant-b.css" />
+  </head>
+  <body class="has-js variant-b">
+    <a class="faint" href="#main" style="position: absolute; left: -999px">До змісту</a>
+
+    <div class="nav-shell">
+      <nav class="nav-island" aria-label="Головна навігація">
+        <a class="logo" href="variant-b.html">Elena Sambur <span>· гіпнокоучинг</span></a>
+        <ul class="nav-links">
+          <li><a href="#method">Метод</a></li>
+          <li><a href="#path">Як це працює</a></li>
+          <li><a href="#about">Про мене</a></li>
+          <li><a href="#offers">Формати</a></li>
+          <li><a href="#faq">Питання</a></li>
+        </ul>
+        <a class="btn btn--primary nav-cta" href="#zapis">Розбір</a>
+        <button class="nav-toggle" type="button" aria-label="Меню" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+
+    <div class="nav-drawer">
+      <ul>
+        <li><a href="#method">Метод</a></li>
+        <li><a href="#path">Як це працює</a></li>
+        <li><a href="#about">Про мене</a></li>
+        <li><a href="#offers">Формати</a></li>
+        <li><a href="#faq">Питання</a></li>
+        <li><a href="#zapis">Записатися</a></li>
+      </ul>
+    </div>
+
+    <main id="main">
+      <!-- HERO: photo + type + CTA only -->
+      <header class="hero">
+        <!-- layers: photo → color scrim → content -->
+        <div class="hero__media" aria-hidden="true">
+          <picture>
+            <source srcset="assets/images/hero1.webp" type="image/webp" />
+            <img
+              src="assets/images/hero1.jpg"
+              alt=""
+              width="1920"
+              height="1280"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
+        </div>
+        <div class="hero__scrim" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="eyebrow">Гіпнокоучинг · емоційне вигорання</p>
+          <h1 class="display">Вже час повернути себе</h1>
+          <p class="lede">
+            М’який вихід з вигорання - без тиску<br />
+            «бути завжди на висоті».
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--on-dark" href="#zapis">
+              Записатися на Розбір
+              <span class="btn__icon" aria-hidden="true">↓</span>
+            </a>
+            <a class="btn btn--ghost-light" href="#path">Як це працює</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- PAIN — drum reel -->
+      <section class="section section--pain" id="pain" aria-labelledby="pain-title">
+        <div class="pain-stage wrap">
+          <div class="section-head pain-stage__head reveal">
+            <h2 class="display" id="pain-title">Впізнаєте себе?</h2>
+            <p class="lede">Вигорання рідко кричить. Частіше воно шепоче: «ще трохи потерпи».</p>
+          </div>
+
+          <div
+            class="pain-reel glass reveal"
+            data-pain-check
+            data-pain-reel
+            tabindex="0"
+            role="listbox"
+            aria-label="Список станів. Крутіть колесо миші, клік — відмітити."
+          >
+            <div class="pain-reel__fade pain-reel__fade--top" aria-hidden="true"></div>
+            <div class="pain-reel__fade pain-reel__fade--bottom" aria-hidden="true"></div>
+            <div class="pain-reel__window">
+              <div class="pain-reel__focus" aria-hidden="true"></div>
+              <ul class="pain-reel__track" data-pain-track>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="no-joy" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">не відчуваю радості</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="autopilot" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">втомився жити «на автоматі»</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="irritation" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">все дратує</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="no-energy" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">немає енергії</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="relations" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">проблеми у відносинах</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="cant-relax" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">не можу розслабитись</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="no-interest" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">зникло бажання жити цікаво</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="lost-self" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">втратив себе</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="body-tired" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">тіло втомилося раніше за календар</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="alienation" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">відчуження від близьких</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="hold-all" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">все тримаю на собі</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="emotions" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">емоції вибухають або зникають</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="just-rest" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">вже пробували «просто відпочити»</span>
+                  </label>
+                </li>
+                <li class="pain-reel__item" data-pain-item>
+                  <label class="pain-reel__label">
+                    <input type="checkbox" name="pain" value="guilt" />
+                    <span class="pain-reel__box" aria-hidden="true"></span>
+                    <span class="pain-reel__text">сором, що «має бути вдячна»</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div class="pain-reel__controls" aria-hidden="true">
+              <button type="button" class="pain-reel__nav" data-pain-prev>↑</button>
+              <button type="button" class="pain-reel__nav" data-pain-next>↓</button>
+            </div>
+            <p class="pain-reel__hint">Крутіть колесо · клік — відмітити «так, це про мене»</p>
+          </div>
+
+          <div class="pain-feedback reveal" data-pain-feedback>
+            <p class="bridge pain-feedback__soft" data-pain-soft>
+              Якщо хоч 2-3 пункти - про вас, ви не «слабкі». Ви - <strong>перевантажені</strong>. І з
+              цим можна м’яко та ефективно працювати.
+            </p>
+            <div class="pain-feedback__cta" data-pain-cta hidden>
+              <p class="pain-feedback__msg">
+                Ви відмітили кілька важливих сигналів. Це вже привід не тягнути все сама.
+              </p>
+              <a class="btn btn--primary" href="#zapis">Записатися на Розбір</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- METHOD -->
+      <section class="section" id="method" aria-labelledby="method-title">
+        <div class="wrap split">
+          <div class="split__media reveal">
+            <picture>
+              <source srcset="assets/images/method-morning.webp" type="image/webp" />
+              <img
+                src="assets/images/method-morning.jpg"
+                alt="Медитація, спокій і присутність у тілі"
+                width="1200"
+                height="1500"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </div>
+          <div class="reveal">
+            <h2 class="display" id="method-title">
+              Гіпнокоучинг - це не «контроль розуму». Це розмова з тією частиною вас, яка вже знає
+              вихід
+            </h2>
+            <p class="lede" style="margin-top: 1rem">
+              Поєднуємо гіпнотичний стан (глибоке, безпечне розслаблення свідомості з одночасним
+              фокусуванням уваги), коучингові питання і роботу з емоціями, тілом та внутрішніми
+              сценаріями.
+            </p>
+            <div class="pillars">
+              <div class="pillar glass">
+                <strong>Тіло</strong>
+                <span>Помітити, де живе напруга, і дати нервовій системі «видохнути».</span>
+              </div>
+              <div class="pillar glass">
+                <strong>Емоції</strong>
+                <span>Назвати те, що довго тримали «для зручності інших».</span>
+              </div>
+              <div class="pillar glass">
+                <strong>Сенс / вибір</strong>
+                <span>Повернути право обирати себе - без вічного почуття провини.</span>
+              </div>
+            </div>
+            <ul class="not-list">
+              <li>не естрадний гіпноз</li>
+              <li>не заміна психіатричній чи медичній допомозі</li>
+              <li>не обіцянка «все виправити за 1 сеанс»</li>
+            </ul>
+            <p class="anchor-phrase">
+              Ми не ламаємо вас. Ми знімаємо зайве навантаження, яке ви носили занадто довго.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULTS -->
+      <section class="section section--deep results" id="results" aria-labelledby="results-title">
+        <div class="wrap">
+          <p class="eyebrow reveal" style="text-align: center">З 2021</p>
+          <p class="stat reveal" id="results-title">360+</p>
+          <p class="stat-label reveal">людей пройшли шлях поруч зі мною</p>
+          <ul class="results-list">
+            <li class="glass reveal">Легше дихати в побуті - менше «фонового гудіння» втоми</li>
+            <li class="glass reveal">Повертається тепло до близьких, менше відчуження</li>
+            <li class="glass reveal">З’являється право сказати «ні» без внутрішнього суду</li>
+            <li class="glass reveal">Знову відчувається «я» - не лише ролі</li>
+            <li class="glass reveal">Краще чути тіло: коли відпочити, коли діяти</li>
+          </ul>
+          <p class="faint reveal" style="margin-top: 1.25rem; text-align: center">
+            Кожен запит унікальний. Темп змін залежить від запиту, ресурсу та регулярності роботи.
+          </p>
+        </div>
+      </section>
+
+      <!-- FOR WHOM -->
+      <section class="section section--elevated" id="for-whom" aria-labelledby="for-title">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <h2 class="display" id="for-title">Кому я можу бути корисною</h2>
+          </div>
+          <div class="two-col">
+            <div class="list-card glass reveal">
+              <h3>Підходить, якщо ви</h3>
+              <ul>
+                <li>відчуваєте емоційне вигорання, хронічну втому, «живу на автоматі»</li>
+                <li>втратили контакт із близькими або із собою</li>
+                <li>хочете м’якої, глибокої роботи - не лише «поговорити»</li>
+                <li>готові до внутрішньої чесності</li>
+                <li>шукаєте структурну підтримку + результативні практики</li>
+              </ul>
+            </div>
+            <div class="list-card list-card--soft glass reveal">
+              <h3>Краще інший формат, якщо</h3>
+              <ul>
+                <li>є гострий психічний стан або потреба в невідкладній допомозі</li>
+                <li>потрібна діагностика чи лікування у психіатра / клінічного психотерапевта</li>
+                <li>очікуєте, що «гіпноз зробить усе за вас» без вашої участі</li>
+              </ul>
+            </div>
+          </div>
+          <p class="bridge reveal">
+            Я не «рятую всіх». Я супроводжую тих, хто готовий повертатися до себе.
+          </p>
+        </div>
+      </section>
+
+      <!-- PATH -->
+      <section class="section" id="path" aria-labelledby="path-title">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <h2 class="display" id="path-title">Як ми будемо рухатися</h2>
+            <p class="lede">Тихий і зрозумілий шлях - від першого контакту до закріплення.</p>
+          </div>
+          <div class="steps">
+            <article class="step glass reveal">
+              <p class="step__n">01</p>
+              <h3>«Розбір»</h3>
+              <p>Короткий контакт: запит, стан, очікування. Чи підходимо одне одному.</p>
+            </article>
+            <article class="step glass reveal">
+              <p class="step__n">02</p>
+              <h3>Запит і рамка</h3>
+              <p>Узгоджуємо фокус: вигорання, межі, стосунки, тривога, тіло.</p>
+            </article>
+            <article class="step glass reveal">
+              <p class="step__n">03</p>
+              <h3>Сесії</h3>
+              <p>Розслаблення → робота з образом / емоцією → інтеграція в життя.</p>
+            </article>
+            <article class="step glass reveal">
+              <p class="step__n">04</p>
+              <h3>Між сесіями</h3>
+              <p>Дихальні опори, короткі самогіпнотичні практики, увага до тіла.</p>
+            </article>
+            <article class="step glass reveal">
+              <p class="step__n">05</p>
+              <h3>Закріплення</h3>
+              <p>З «режиму виживання» - у режим, у якому можна жити.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SESSION -->
+      <section class="session" id="session" aria-labelledby="session-title">
+        <!-- layers: photo 2 → color scrim → glass panel -->
+        <div class="session__media" aria-hidden="true">
+          <picture>
+            <source srcset="assets/images/session-forest.webp" type="image/webp" />
+            <img
+              src="assets/images/session-forest.jpg"
+              alt=""
+              width="1920"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+        </div>
+        <div class="session__scrim" aria-hidden="true"></div>
+        <div class="session__panel glass reveal">
+          <h2 class="display" id="session-title">Як проходить сесія</h2>
+          <div class="session__story">
+            <p>Ви зручно сідаєте.</p>
+            <p>Заплющуєте очі.</p>
+            <p>Я допомагаю <strong>уповільнити думки</strong>.</p>
+            <p>Ви слухаєте мій голос і розслабляєтесь.</p>
+            <p>
+              Йдете за голосом - і чуєте <strong>найпершу відповідь</strong> зсередини, не з голови
+              «як треба».
+            </p>
+          </div>
+          <div class="session__meta">
+            <span
+              >Мова: українська або російська - залежно від того, якою мовою думаєте і якою
+              проживали дитинство</span
+            >
+            <span>Формат: онлайн (офлайн - за домовленістю)</span>
+            <span>Конфіденційність: повна</span>
+            <span>Після: частіше тиша в голові й ясність маленького наступного кроку</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section section--elevated" id="about" aria-labelledby="about-title">
+        <div class="wrap about-grid">
+          <div class="about-photo reveal">
+            <picture>
+              <source srcset="assets/images/elena-sambur-portrait.webp" type="image/webp" />
+              <img
+                src="assets/images/elena-sambur-portrait.jpg"
+                alt="Олена Самбур, гіпнокоуч"
+                width="900"
+                height="1125"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </div>
+          <div class="reveal">
+            <h2 class="display" id="about-title">Я - Олена Самбур</h2>
+            <p class="lede" style="margin-top: 0.85rem">
+              Гіпнокоуч. Працюю з емоційним вигоранням, гіпнотерапевтичними та психосоматичними
+              підходами в практиці гіпнокоучингу.
+            </p>
+            <p class="muted" style="margin-top: 1rem; max-width: 36rem">
+              З 2021 року проводжу людей через тиху трансформацію: від «тримаю все на собі» - до «я
+              знову відчуваю себе». Моя робота - ГіпноКоучинг: гіпнотичні техніки + коучинговий
+              супровід. Без сорому за втому, без тиску «будь продуктивною», з повагою до вашого
+              темпу.
+            </p>
+            <div class="about-facts">
+              <span class="chip">Вигорання</span>
+              <span class="chip">360+ з 2021</span>
+              <span class="chip">Основи самогіпнозу</span>
+              <span class="chip">Lviv · online</span>
+              <span class="chip">@sambur.elena</span>
+            </div>
+            <a class="btn btn--primary" href="#zapis">Почнімо з «Розбору»</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- OFFERS -->
+      <section class="section" id="offers" aria-labelledby="offers-title">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <h2 class="display" id="offers-title">Формати роботи</h2>
+            <p class="lede">Усі ціни - за запитом. Головний крок: записатися на «Розбір».</p>
+          </div>
+          <div class="offers">
+            <article class="offer offer--featured glass reveal">
+              <h3>«Розбір»</h3>
+              <p>
+                Короткий розбір запиту. Чи потрібен гіпнокоучинг саме зараз - і чи комфортно нам
+                разом.
+              </p>
+              <p class="offer__price">Ціна за запитом</p>
+              <a class="btn btn--primary" href="#zapis">Записатися</a>
+            </article>
+            <article class="offer glass reveal">
+              <h3>Індивідуальний гіпнокоучинг</h3>
+              <p>
+                Серія сесій під ваш запит: вигорання, межі, стосунки, тривога, тіло. Обсяг
+                узгоджуємо на «Розборі».
+              </p>
+              <p class="offer__price">Ціна за запитом</p>
+              <a class="btn btn--ghost" href="#zapis">Запитати</a>
+            </article>
+            <article class="offer glass reveal">
+              <h3>Курс «Основи самогіпнозу»</h3>
+              <p>
+                Авторський курс, щоб підтримувати себе між сесіями або зробити м’який перший крок.
+              </p>
+              <p class="offer__price">Ціна за запитом</p>
+              <a class="btn btn--ghost" href="#zapis">Дізнатися про курс</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="section section--elevated" id="voices" aria-labelledby="voices-title">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <h2 class="display" id="voices-title">Голоси тих, хто вже пройшов частину шляху</h2>
+            <p class="lede">Реальні відгуки клієнтів - текст і відео.</p>
+          </div>
+
+          <div class="reviews-grid">
+            <figure class="review-card review-card--shot glass reveal">
+              <picture>
+                <source srcset="assets/reviews/review-screenshot-01.webp" type="image/webp" />
+                <img
+                  src="assets/reviews/review-screenshot-01.jpg"
+                  alt="Текстовий відгук клієнта"
+                  width="1200"
+                  height="1600"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <figcaption>Письмовий відгук</figcaption>
+            </figure>
+
+            <article class="review-card review-card--video glass reveal">
+              <div class="review-video">
+                <video
+                  controls
+                  playsinline
+                  webkit-playsinline
+                  preload="metadata"
+                  controlslist="nodownload"
+                >
+                  <source src="./assets/reviews/review-video-01.mp4" type="video/mp4" />
+                  Ваш браузер не підтримує відео.
+                </video>
+              </div>
+              <p class="review-card__label">Відеовідгук</p>
+            </article>
+
+            <article class="review-card review-card--video glass reveal">
+              <div class="review-video">
+                <video
+                  controls
+                  playsinline
+                  webkit-playsinline
+                  preload="metadata"
+                  controlslist="nodownload"
+                >
+                  <source src="./assets/reviews/review-video-02.mp4" type="video/mp4" />
+                  Ваш браузер не підтримує відео.
+                </video>
+              </div>
+              <p class="review-card__label">Відеовідгук</p>
+            </article>
+
+            <article class="review-card review-card--video glass reveal">
+              <div class="review-video">
+                <video
+                  controls
+                  playsinline
+                  webkit-playsinline
+                  preload="metadata"
+                  controlslist="nodownload"
+                >
+                  <source src="./assets/reviews/review-video-03.mp4" type="video/mp4" />
+                  Ваш браузер не підтримує відео.
+                </video>
+              </div>
+              <p class="review-card__label">Відеовідгук</p>
+            </article>
+
+            <article class="review-card review-card--video glass reveal">
+              <div class="review-video">
+                <video
+                  controls
+                  playsinline
+                  webkit-playsinline
+                  preload="metadata"
+                  controlslist="nodownload"
+                >
+                  <source src="./assets/reviews/review-video-04.mp4" type="video/mp4" />
+                  Ваш браузер не підтримує відео.
+                </video>
+              </div>
+              <p class="review-card__label">Відеовідгук</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq" aria-labelledby="faq-title">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <h2 class="display" id="faq-title">Питання перед першою сесією</h2>
+          </div>
+          <div class="faq reveal">
+            <details>
+              <summary>Чи це небезпечно?</summary>
+              <p>
+                Ні. У гіпнокоучингу ви залишаєтесь у контакті з собою. Це кероване глибоке
+                розслаблення уваги, не втрата контролю.
+              </p>
+            </details>
+            <details>
+              <summary>Я буду «під гіпнозом» і скажу зайве?</summary>
+              <p>
+                Ви не стаєте маріонеткою. Можете говорити, мовчати, відкрити очі. Межі поваги -
+                основа роботи.
+              </p>
+            </details>
+            <details>
+              <summary>Скільки сесій потрібно?</summary>
+              <p>
+                Залежить від запиту. Як правило, обираємо <strong>4+1</strong> підсумкова або
+                <strong>8+1</strong> підсумкова. За необхідності - до <strong>12</strong> сесій. На
+                «Розборі» окреслимо реалістичний горизонт саме для вас.
+              </p>
+            </details>
+            <details>
+              <summary>Онлайн працює так само?</summary>
+              <p>
+                Так. Тиша, навушники, безпечний простір вдома - звичний і ефективний формат.
+              </p>
+            </details>
+            <details>
+              <summary>Чи замінює це лікування?</summary>
+              <p>
+                Ні. Гіпнокоучинг не є медициною чи психіатрією. За потреби рекомендую звернутися до
+                відповідного спеціаліста. Див.
+                <a href="disclaimer.html">Відмову від відповідальності</a>.
+              </p>
+            </details>
+            <details>
+              <summary>Як записатися?</summary>
+              <p>
+                Натисніть «Записатися на Розбір» і залиште короткий запит у формі внизу сторінки.
+                Я зв’яжусь з вами для узгодження наступного кроку.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA / booking (channel-agnostic) -->
+      <section class="final" id="zapis" aria-labelledby="zapis-title">
+        <!-- layers: photo 3 → color scrim → glass form panel -->
+        <div class="final__media" aria-hidden="true">
+          <picture>
+            <source srcset="assets/images/final-path.webp" type="image/webp" />
+            <img
+              src="assets/images/final-path.jpg"
+              alt=""
+              width="1920"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+        </div>
+        <div class="final__scrim" aria-hidden="true"></div>
+        <div class="final__panel glass glass--strong reveal">
+          <h2 class="display" id="zapis-title">Досить тягнути все сама</h2>
+          <p class="lede">
+            «Розбір» - тихе місце сказати «мені важко» і зрозуміти, що далі.
+          </p>
+          <form class="booking-form" id="booking-form" novalidate>
+            <label class="field">
+              <span>Ім’я</span>
+              <input type="text" name="name" autocomplete="name" required placeholder="Як до вас звертатися" />
+            </label>
+            <label class="field">
+              <span>Контакт</span>
+              <input
+                type="text"
+                name="contact"
+                autocomplete="tel"
+                required
+                placeholder="Телефон, Telegram або email"
+              />
+            </label>
+            <label class="field">
+              <span>Коротко про запит</span>
+              <textarea name="message" rows="3" placeholder="Що зараз найважче? (1–2 речення)"></textarea>
+            </label>
+            <label class="consent">
+              <input type="checkbox" name="consent" required />
+              <span
+                >Згода на обробку персональних даних для зв’язку та запису.
+                <a href="privacy.html">Політика</a> ·
+                <a href="terms.html">Умови</a> ·
+                <a href="disclaimer.html">Відмова</a></span
+              >
+            </label>
+            <button class="btn btn--primary" type="submit">
+              Записатися на Розбір
+              <span class="btn__icon" aria-hidden="true">→</span>
+            </button>
+            <p class="form-status" id="booking-status" hidden role="status"></p>
+          </form>
+          <p class="micro-disclaimer">
+            Гіпнокоучинг не є медичною чи психіатричною допомогою.
+            <a href="disclaimer.html">Деталі</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer__grid">
+        <div>
+          <h3>Елена Самбур</h3>
+          <p class="muted" style="font-size: 0.95rem; max-width: 22rem">
+            Гіпнокоучинг · терапія емоційного вигорання · Lviv · online
+          </p>
+        </div>
+        <div>
+          <h3>Навігація</h3>
+          <ul>
+            <li><a href="#method">Метод</a></li>
+            <li><a href="#offers">Формати</a></li>
+            <li><a href="#faq">Питання</a></li>
+            <li><a href="#zapis">Запис</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Документи</h3>
+          <ul>
+            <li><a href="privacy.html">Політика конфіденційності</a></li>
+            <li><a href="terms.html">Умови користування</a></li>
+            <li><a href="disclaimer.html">Відмова від відповідальності</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="wrap footer__legal">
+        <p>
+          © <span id="y"></span> Елена Самбур · Instagram
+          <a href="https://www.instagram.com/sambur.elena/" rel="noopener noreferrer" target="_blank"
+            >@sambur.elena</a
+          >
+        </p>
+        <p>
+          Послуги гіпнокоучингу не є медичною чи психотерапевтичною допомогою в клінічному сенсі та
+          не замінюють консультацію лікаря / психіатра за потреби.
+        </p>
+      </div>
+    </footer>
+
+    <div class="cookie-banner glass glass--strong" role="dialog" aria-label="Cookies">
+      <p>
+        Сайт використовує технічно необхідні дані браузера. Деталі -
+        <a href="cookies.html">Політика cookies</a>.
+      </p>
+      <div class="cookie-banner__actions">
+        <button class="btn btn--primary" type="button" data-cookie-ok>Зрозуміло</button>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+    <script src="./js/main.js" defer></script>
+  </body>
+</html>

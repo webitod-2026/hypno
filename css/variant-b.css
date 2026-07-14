@@ -1,0 +1,105 @@
+/**
+ * Варіант B — кнопки в кольорі з палітри замовника (3-й / останній lime-sage)
+ * Підключається ПІСЛЯ styles.css
+ */
+
+body.variant-b {
+  /* optional slight cooler base already in main; keep */
+}
+
+/* Primary CTA — visible lime-forest from client palette (3rd / last swatch family) */
+body.variant-b {
+  --btn: #8fbc3a;
+  --btn-rgb: 143, 188, 58;
+  --cta-text: #1a2214;
+  --btn-hover: #a3cf4a;
+  --btn-deep: #6f9429;
+}
+
+body.variant-b .btn--primary {
+  color: var(--cta-text);
+  font-weight: 600;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(0, 0, 0, 0.06) 100%),
+    rgba(var(--btn-rgb), 0.92);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 10px 28px rgba(var(--btn-rgb), 0.35);
+}
+
+body.variant-b .btn--primary:hover,
+body.variant-b .btn--primary:focus-visible {
+  color: var(--cta-text);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.12) 50%, rgba(0, 0, 0, 0.05) 100%),
+    var(--btn-hover);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    0 14px 34px rgba(var(--btn-rgb), 0.42);
+}
+
+body.variant-b .btn--primary .btn__icon {
+  background: rgba(26, 34, 20, 0.12);
+  color: var(--cta-text);
+}
+
+/* Hero primary over photo */
+body.variant-b .btn--on-dark {
+  color: var(--cta-text);
+  font-weight: 600;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(0, 0, 0, 0.08) 100%),
+    rgba(var(--btn-rgb), 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+body.variant-b .btn--on-dark:hover,
+body.variant-b .btn--on-dark:focus-visible {
+  color: var(--cta-text);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.14) 50%, rgba(0, 0, 0, 0.06) 100%),
+    var(--btn-hover);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+body.variant-b .btn--on-dark .btn__icon {
+  background: rgba(26, 34, 20, 0.12);
+  color: var(--cta-text);
+}
+
+/* Secondary stay light; hover uses lime accent */
+body.variant-b .btn--ghost:hover,
+body.variant-b .btn--ghost:focus-visible {
+  color: var(--btn-deep);
+  border-color: rgba(var(--btn-rgb), 0.55);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 8px 22px rgba(var(--btn-rgb), 0.18);
+}
+
+body.variant-b .btn--ghost:hover .btn__icon,
+body.variant-b .btn--ghost:focus-visible .btn__icon {
+  background: rgba(var(--btn-rgb), 0.22);
+  color: var(--btn-deep);
+}
+
+/* Cookie / form submit same primary */
+body.variant-b .cookie-banner .btn--primary {
+  color: var(--cta-text);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  body.variant-b .btn--primary,
+  body.variant-b .btn--on-dark {
+    background: var(--btn);
+    color: var(--cta-text);
+  }
+}
