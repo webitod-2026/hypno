@@ -186,6 +186,38 @@
     });
   }
 
+  /* Lazy-load review videos only near viewport (poster stays free) */
+  const lazyVideos = document.querySelectorAll("video[data-src]");
+  const attachVideoSource = (video) => {
+    const src = video.getAttribute("data-src");
+    if (!src || video.dataset.loaded === "1") return;
+    const source = document.createElement("source");
+    source.src = src;
+    source.type = "video/mp4";
+    video.appendChild(source);
+    video.load();
+    video.dataset.loaded = "1";
+    video.removeAttribute("data-src");
+  };
+  if (lazyVideos.length) {
+    if ("IntersectionObserver" in window) {
+      const vio = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              attachVideoSource(entry.target);
+              vio.unobserve(entry.target);
+            }
+          });
+        },
+        { rootMargin: "200px 0px" }
+      );
+      lazyVideos.forEach((v) => vio.observe(v));
+    } else {
+      lazyVideos.forEach(attachVideoSource);
+    }
+  }
+
   /* Scroll reveal */
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const items = document.querySelectorAll(".reveal");
