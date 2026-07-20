@@ -147,45 +147,6 @@
     render();
   }
 
-  /* Booking form — channel-agnostic stub (wire backend later) */
-  const form = document.getElementById("booking-form");
-  const status = document.getElementById("booking-status");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      const name = String(data.get("name") || "").trim();
-      const contact = String(data.get("contact") || "").trim();
-      const consent = form.querySelector('input[name="consent"]');
-
-      if (!name || !contact) {
-        if (status) {
-          status.hidden = false;
-          status.classList.add("is-error");
-          status.textContent = "Будь ласка, вкажіть ім’я та контакт.";
-        }
-        return;
-      }
-      if (consent && !consent.checked) {
-        if (status) {
-          status.hidden = false;
-          status.classList.add("is-error");
-          status.textContent = "Потрібна згода на обробку персональних даних.";
-        }
-        return;
-      }
-
-      /* Placeholder: later → API / email / CRM / Telegram notify */
-      if (status) {
-        status.hidden = false;
-        status.classList.remove("is-error");
-        status.textContent =
-          "Дякую. Заявку прийнято (демо). Пізніше підключимо реальну відправку.";
-      }
-      form.reset();
-    });
-  }
-
   /* Lazy-load review videos only near viewport (poster stays free) */
   const lazyVideos = document.querySelectorAll("video[data-src]");
   const attachVideoSource = (video) => {
@@ -250,6 +211,66 @@
         localStorage.setItem(cookieKey, "1");
         banner.classList.remove("is-visible");
       });
+    });
+  }
+
+  /* Telegram confirm modal — intercept all t.me/ElenaSambur links */
+  const tgModal = document.getElementById("tg-modal");
+  const tgGo = document.getElementById("tg-modal-go");
+  const isTgLink = (a) => {
+    if (!a || a.tagName !== "A") return false;
+    const href = a.getAttribute("href") || "";
+    return /(?:^https?:\/\/)?(?:t\.me|telegram\.me)\/ElenaSambur/i.test(href);
+  };
+
+  if (tgModal && tgGo) {
+    let lastFocus = null;
+    let pendingUrl = tgGo.getAttribute("href") || "https://t.me/ElenaSambur";
+
+    const openTgModal = (url) => {
+      pendingUrl = url || pendingUrl;
+      tgGo.setAttribute("href", pendingUrl);
+      lastFocus = document.activeElement;
+      tgModal.hidden = false;
+      document.body.classList.add("tg-modal-open");
+      const closeBtn = tgModal.querySelector("[data-tg-close]");
+      (tgGo || closeBtn)?.focus?.();
+    };
+
+    const closeTgModal = () => {
+      tgModal.hidden = true;
+      document.body.classList.remove("tg-modal-open");
+      if (lastFocus && typeof lastFocus.focus === "function") {
+        lastFocus.focus();
+      }
+    };
+
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest?.("a");
+      if (!a || !isTgLink(a)) return;
+      /* Modal primary CTA already opens Telegram — don't re-open modal */
+      if (a.id === "tg-modal-go" || tgModal.contains(a)) return;
+      e.preventDefault();
+      openTgModal(a.href);
+    });
+
+    tgModal.querySelectorAll("[data-tg-close]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeTgModal();
+      });
+    });
+
+    tgGo.addEventListener("click", () => {
+      /* Let the browser open the tab; close modal shortly after */
+      window.setTimeout(closeTgModal, 120);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !tgModal.hidden) {
+        e.preventDefault();
+        closeTgModal();
+      }
     });
   }
 })();
